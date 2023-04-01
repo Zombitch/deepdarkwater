@@ -106,6 +106,7 @@ MonoBehaviour:
   invertYAxis: 0
   moveSpeed: 1000
   lookSpeed: 150
+  intertie: 1.75
   camera: {fileID: 1365169066149682117}
 --- !u!114 &1365169064919597468
 MonoBehaviour:

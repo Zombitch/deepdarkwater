@@ -2,18 +2,19 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Water Fog 3
   m_Shader: {fileID: 4800000, guid: 6490db4c7a37d8349b85b261b7ff5cea, type: 3}
-  m_ShaderKeywords: 
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2999
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -59,8 +60,9 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
-    - LightIntensity: 0.99
+    - LightIntensity: 10
     - _BumpScale: 1
     - _ColorStart1: 2
     - _ColorStart2: 4
@@ -70,7 +72,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _FogDepthMultiplier: 0.4
-    - _FogIntensity: 1.3
+    - _FogIntensity: 2
     - _FogOffset: 1
     - _FogSmoothness: 1
     - _GlossMapScale: 1
@@ -93,11 +95,12 @@ Material:
     - _DeepColor: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FogColor: {r: 0.03720184, g: 0.26307723, b: 0.41509432, a: 0}
-    - _FogColor1: {r: 0.09411765, g: 0.19288507, b: 0.29411766, a: 0}
-    - _FogColor2: {r: 0.03921568, g: 0.101468235, b: 0.20784314, a: 0.13333334}
-    - _FogColor3: {r: 0.030037384, g: 0.11608546, b: 0.23584908, a: 0.43529412}
-    - _FogColor4: {r: 0.016687429, g: 0.07285736, b: 0.14150941, a: 0.7490196}
-    - _FogColor5: {r: 0.015686272, g: 0.055141203, b: 0.09411765, a: 1}
-    - _LightColor: {r: 1.5706805, g: 3.811518, b: 3.9999995, a: 0}
+    - _FogColor1: {r: 0.00009191177, g: 0.00018765319, b: 0.00028722428, a: 0}
+    - _FogColor2: {r: 0.00003829657, g: 0.00009957108, b: 0.00020297182, a: 0.13333334}
+    - _FogColor3: {r: 0.000030637257, g: 0.000114889706, b: 0.00022977941, a: 0.43529412}
+    - _FogColor4: {r: 0.00008425245, g: 0.0004097733, b: 0.0007314645, a: 0.7490196}
+    - _FogColor5: {r: 0.0048280177, g: 0.01689806, b: 0.028968105, a: 1}
+    - _LightColor: {r: 0.042231563, g: 0.102481924, b: 0.10754971, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SurfaceColor: {r: 0.3137255, g: 1.8352941, b: 2, a: 0}
+  m_BuildTextureStacks: []

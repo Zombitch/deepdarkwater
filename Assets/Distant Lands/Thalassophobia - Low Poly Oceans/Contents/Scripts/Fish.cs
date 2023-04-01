@@ -63,7 +63,6 @@ namespace DistantLands
         void ApplyRules()
         {
             GameObject[] gos;
-            Debug.Log(flock);
             gos = flock.allFish.ToArray();
 
             speed = Random.Range(0.5f, 1.5f) * averageSpeed;

@@ -254,7 +254,6 @@ GameObject:
   - component: {fileID: 1810689987}
   - component: {fileID: 1810689986}
   - component: {fileID: 1810689985}
-  - component: {fileID: 1810689988}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -322,24 +321,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1810689988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810689984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5808e206cf008184d850d804dfa27d9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fishPrefabs: []
-  fishSchool: {fileID: 0}
-  wanderSize: 7
-  target: {fileID: 0}
-  numFish: 30
-  allFish: []
 --- !u!1 &2129532343
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,9 +356,10 @@ MonoBehaviour:
   - {fileID: 8328995022376090792, guid: 76d620970f125b74cada0d3efd7461ea, type: 3}
   - {fileID: 8328995022376090792, guid: 76d620970f125b74cada0d3efd7461ea, type: 3}
   fishSchool: {fileID: 2129532343}
+  fishPrefab: {fileID: 0}
   wanderSize: 7
   target: {fileID: 1089852189}
-  numFish: 30
+  numFish: 10
   allFish: []
 --- !u!4 &2129532345
 Transform:

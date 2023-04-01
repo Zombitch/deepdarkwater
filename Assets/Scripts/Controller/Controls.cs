@@ -37,7 +37,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Interaction"",
+                    ""name"": ""AddLight"",
                     ""type"": ""Button"",
                     ""id"": ""d69d1fea-4dc5-4557-a8bd-e58301ae3a71"",
                     ""expectedControlType"": ""Button"",
@@ -113,34 +113,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""d7bf77af-c0c8-4e4b-906f-a6ecf2406fda"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Interaction"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""46901188-9ab3-46ff-88d0-ffcbc2bc6ce5"",
                     ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Interaction"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""643b89b3-02d7-4a58-8664-fc827eea074a"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Interaction"",
+                    ""action"": ""AddLight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -207,7 +185,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         // PlayerMap
         m_PlayerMap = asset.FindActionMap("PlayerMap", throwIfNotFound: true);
         m_PlayerMap_Movements = m_PlayerMap.FindAction("Movements", throwIfNotFound: true);
-        m_PlayerMap_Interaction = m_PlayerMap.FindAction("Interaction", throwIfNotFound: true);
+        m_PlayerMap_AddLight = m_PlayerMap.FindAction("AddLight", throwIfNotFound: true);
         m_PlayerMap_Look = m_PlayerMap.FindAction("Look", throwIfNotFound: true);
     }
 
@@ -271,14 +249,14 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_PlayerMap;
     private List<IPlayerMapActions> m_PlayerMapActionsCallbackInterfaces = new List<IPlayerMapActions>();
     private readonly InputAction m_PlayerMap_Movements;
-    private readonly InputAction m_PlayerMap_Interaction;
+    private readonly InputAction m_PlayerMap_AddLight;
     private readonly InputAction m_PlayerMap_Look;
     public struct PlayerMapActions
     {
         private @Controls m_Wrapper;
         public PlayerMapActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movements => m_Wrapper.m_PlayerMap_Movements;
-        public InputAction @Interaction => m_Wrapper.m_PlayerMap_Interaction;
+        public InputAction @AddLight => m_Wrapper.m_PlayerMap_AddLight;
         public InputAction @Look => m_Wrapper.m_PlayerMap_Look;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMap; }
         public void Enable() { Get().Enable(); }
@@ -292,9 +270,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Movements.started += instance.OnMovements;
             @Movements.performed += instance.OnMovements;
             @Movements.canceled += instance.OnMovements;
-            @Interaction.started += instance.OnInteraction;
-            @Interaction.performed += instance.OnInteraction;
-            @Interaction.canceled += instance.OnInteraction;
+            @AddLight.started += instance.OnAddLight;
+            @AddLight.performed += instance.OnAddLight;
+            @AddLight.canceled += instance.OnAddLight;
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
@@ -305,9 +283,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Movements.started -= instance.OnMovements;
             @Movements.performed -= instance.OnMovements;
             @Movements.canceled -= instance.OnMovements;
-            @Interaction.started -= instance.OnInteraction;
-            @Interaction.performed -= instance.OnInteraction;
-            @Interaction.canceled -= instance.OnInteraction;
+            @AddLight.started -= instance.OnAddLight;
+            @AddLight.performed -= instance.OnAddLight;
+            @AddLight.canceled -= instance.OnAddLight;
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
@@ -331,7 +309,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     public interface IPlayerMapActions
     {
         void OnMovements(InputAction.CallbackContext context);
-        void OnInteraction(InputAction.CallbackContext context);
+        void OnAddLight(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
     }
 }

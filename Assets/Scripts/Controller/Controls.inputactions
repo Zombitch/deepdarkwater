@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Interaction",
+                    "name": "AddLight",
                     "type": "Button",
                     "id": "d69d1fea-4dc5-4557-a8bd-e58301ae3a71",
                     "expectedControlType": "Button",
@@ -91,34 +91,12 @@
                 },
                 {
                     "name": "",
-                    "id": "d7bf77af-c0c8-4e4b-906f-a6ecf2406fda",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Interaction",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "46901188-9ab3-46ff-88d0-ffcbc2bc6ce5",
                     "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Interaction",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "643b89b3-02d7-4a58-8664-fc827eea074a",
-                    "path": "<Gamepad>/rightShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Interaction",
+                    "action": "AddLight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

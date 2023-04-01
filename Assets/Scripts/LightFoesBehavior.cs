@@ -27,6 +27,8 @@ namespace DistantLandsOverride
     
         void OnTriggerEnter (Collider other)
         {
+            Debug.Log(other);   
+            Debug.Log("collide");
             if (other.gameObject == player)
             {
                 playerLight.intensity += foesLight.intensity;

@@ -2,34 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightFoesBehavior : MonoBehaviour
+namespace DistantLandsOverride
 {
-    public GameObject player;
-    Light foesLight;
-    Light playerLight;
-    
-    void Start()
+    public class LightFoesBehavior : MonoBehaviour
     {
-        foesLight = GetComponent<Light>();
-        playerLight = player.GetComponent<Light>();
-    }
+        public GameObject player;
+        Light foesLight;
+        Light playerLight;
+        private GameObject parent;
 
-    /**
+        void Start()
+        {
+            foesLight = GetComponent<Light>();
+            playerLight = player.GetComponent<Light>();
+            GameObject parent = GameObject.Find("schoolFish");
+        }
+
+        /**
     void Update()
     {
         foesLight.intensity = Mathf.PingPong(Time.time, 8);
     }
     **/
     
-    void OnTriggerEnter (Collider other)
-    {
-        Debug.Log("colide");
-        if (other.gameObject == player)
+        void OnTriggerEnter (Collider other)
         {
-            playerLight.intensity += foesLight.intensity;
-            foesLight.intensity = 0;
+            if (other.gameObject == player)
+            {
+                playerLight.intensity += foesLight.intensity;
+                foesLight.intensity = 0;
+                SpawnFoes.removeShcoolFish(parent);
+            }
         }
+        
+    
+    
     }
-    
-    
 }
+

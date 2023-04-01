@@ -95,6 +95,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightSphere
       objectReference: {fileID: 0}
+    - target: {fileID: 1169822450986609516, guid: a4bf4a7bc212745479bddc184c5ce71e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328072810989515517, guid: a4bf4a7bc212745479bddc184c5ce71e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1989645783003731337, guid: a4bf4a7bc212745479bddc184c5ce71e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -137,6 +145,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1989645783003731337, guid: a4bf4a7bc212745479bddc184c5ce71e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196921687014680770, guid: a4bf4a7bc212745479bddc184c5ce71e, type: 3}
+      propertyPath: m_Type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196921687014680770, guid: a4bf4a7bc212745479bddc184c5ce71e, type: 3}
+      propertyPath: m_DrawHalo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196921687014680770, guid: a4bf4a7bc212745479bddc184c5ce71e, type: 3}
+      propertyPath: m_AreaSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196921687014680770, guid: a4bf4a7bc212745479bddc184c5ce71e, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196921687014680770, guid: a4bf4a7bc212745479bddc184c5ce71e, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5360818642474382639, guid: a4bf4a7bc212745479bddc184c5ce71e, type: 3}
+      propertyPath: m_Height
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5360818642474382639, guid: a4bf4a7bc212745479bddc184c5ce71e, type: 3}
+      propertyPath: m_Radius
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5360818642474382639, guid: a4bf4a7bc212745479bddc184c5ce71e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178608848712674593, guid: a4bf4a7bc212745479bddc184c5ce71e, type: 3}
+      propertyPath: m_ReceiveShadows
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

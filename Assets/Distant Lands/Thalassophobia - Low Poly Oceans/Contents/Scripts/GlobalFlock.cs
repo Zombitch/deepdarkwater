@@ -12,7 +12,7 @@ namespace DistantLands
 		public float wanderSize = 7;
 		public GameObject target;
 
-		public int numFish = 30;
+		public int numFish = 9;
 		[HideInInspector]
 		public List<GameObject> allFish;
 		public static Vector3 goalPos = Vector3.zero;

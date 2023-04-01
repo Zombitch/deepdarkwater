@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -50,5 +51,10 @@ public class Player : MonoBehaviour
             this.light.range = Mathf.Max(15f, this.light.range-0.01f);
             this.lastLightEvent = Time.time;
         }
+    }
+
+    void OnCollisionEnter(Collision collision){
+        GameObject hitObject = collision.gameObject;
+        logger.Log("Collision", hitObject.tag);
     }
 }

@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private static ILogger logger = Debug.unityLogger;
 
     public PlayerInput inputs;
+    public Rigidbody rigidBody;
     public bool invertYAxis = false;
     public float moveSpeed = 150f;
     public float lookSpeed = 150f;
@@ -28,7 +29,14 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if(this.move != Vector3.zero){
-            this.transform.Translate(this.move * this.moveSpeed * Time.deltaTime);
+            Vector3 direction = Vector3.zero;
+            logger.Log(this.move);
+            if(this.move.z >= 0.75) direction = this.transform.forward;
+            else if(this.move.z <= -0.75) direction = this.transform.forward * -1;
+            else if(this.move.x >= -0.75) direction = this.transform.right;
+            else if(this.move.x <= -0.75) direction = this.transform.right * -1;
+
+            this.rigidBody.AddForce(direction  * this.moveSpeed * Time.deltaTime);
         }
         if(this.look != Vector3.zero){
             this.transform.Rotate(this.look * this.lookSpeed * Time.deltaTime);

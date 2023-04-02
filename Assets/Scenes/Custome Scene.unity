@@ -13477,7 +13477,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 90a42a3e62bdbc34ca69d4134b5d29af, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.783
+  m_Volume: 0.621
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -13486,7 +13486,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 100
+  MaxDistance: 150
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -32017,6 +32017,10 @@ PrefabInstance:
       propertyPath: lightTick
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1822621775, guid: 8baf509c417cdaa4792d4bec78b5605f, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 843116773}
     - target: {fileID: 1822621775, guid: 8baf509c417cdaa4792d4bec78b5605f, type: 3}
       propertyPath: textMeshPro
       value: 

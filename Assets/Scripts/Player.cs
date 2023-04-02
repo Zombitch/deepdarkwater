@@ -79,10 +79,6 @@ public class Player : MonoBehaviour
             this.isRescued = true;
             this.textMeshPro.enabled = true;
             logger.Log("Collision", "Diver has been rescued, return to base");
-        }else if(this.isRescued == true && hitObject.name == "SeabaseCollider"){
-            this.textMeshPro.enabled = false;
-            SceneManager.LoadScene(2);
-            logger.Log("Collision", "Welcome back to the Sea base");
         }
     }
 
@@ -106,7 +102,13 @@ public class Player : MonoBehaviour
             StartCoroutine(gameObject.GetComponent<FlashLight>().handleFlashLight());
             this.IncreaseLight();
             Destroy(hitObject);
-        } else if(hitObject.name == "WhiteShark") SceneManager.LoadScene(3);
+        } else if(hitObject.name == "WhiteShark") {
+            SceneManager.LoadScene(3);
+        } else if(this.isRescued == true && hitObject.name == "SeabaseCollider"){
+            this.textMeshPro.enabled = false;
+            SceneManager.LoadScene(2);
+            logger.Log("Collision", "Welcome back to the Sea base");
+        }
     }
 
 }

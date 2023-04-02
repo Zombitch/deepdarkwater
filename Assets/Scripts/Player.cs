@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public float lightTick = 0.15f;
 
     private float lastLightEvent = 0f;
+    private bool isRescued = false;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +56,11 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter(Collision collision){
         GameObject hitObject = collision.gameObject;
-        logger.Log("Collision", hitObject.tag);
+
+        if(hitObject.name == "Diver"){
+            Destroy(hitObject);
+            this.isRescued = true;
+            logger.Log("Collision", "Diver has been rescued, return to base");
+        }
     }
 }

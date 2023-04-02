@@ -97,13 +97,16 @@ public class Player : MonoBehaviour
         
         if(hitObject.tag == "Fish")
         {
+            StartCoroutine(gameObject.GetComponent<FlashLight>().handleFlashLight());
             this.IncreaseLight();
             gameObject.GetComponent<SpawnFoes>().removeSchoolFishNumber();
             Destroy(hitObject.transform.parent.gameObject);
         } else if (hitObject.tag == "SeaWeed")
         {
+            StartCoroutine(gameObject.GetComponent<FlashLight>().handleFlashLight());
             this.IncreaseLight();
             Destroy(hitObject);
-        }else if(hitObject.name == "WhiteShark") SceneManager.LoadScene(3);
+        } else if(hitObject.name == "WhiteShark") SceneManager.LoadScene(3);
     }
+
 }

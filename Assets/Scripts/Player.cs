@@ -89,4 +89,19 @@ public class Player : MonoBehaviour
         this.shark.transform.LookAt(this.camera.transform);
         this.shark.GetComponent<Rigidbody>().AddForce(this.shark.transform.forward * 2000f);
     }
+    
+    void OnTriggerEnter(Collider collider) {
+        GameObject hitObject = collider.gameObject;
+        
+        if(hitObject.tag == "Fish")
+        {
+            this.IncreaseLight();
+            gameObject.GetComponent<SpawnFoes>().removeSchoolFishNumber();
+            Destroy(hitObject.transform.parent.gameObject);
+        } else if (hitObject.tag == "SeaWeed")
+        {
+            this.IncreaseLight();
+            Destroy(hitObject);
+        }
+    }
 }

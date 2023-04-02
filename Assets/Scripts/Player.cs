@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     private float lastLightEvent = 0f;
     private bool isRescued = false;
     private bool isSharkAppeared = false;
+    private float minSharkPositionY = -20f;
 
     public bool IsSharkAppeared(){ return this.isSharkAppeared;}
 
@@ -83,8 +84,14 @@ public class Player : MonoBehaviour
     }
 
     private void spawnShark(){
-        this.shark.transform.position = this.camera.transform.position + this.camera.transform.forward * 100;
+        this.shark.transform.position = this.camera.transform.position + this.camera.transform.forward * 125;
+
+        if(this.shark.transform.position.y < this.minSharkPositionY){
+            this.shark.transform.position = new Vector3(this.shark.transform.position.x, this.minSharkPositionY, this.shark.transform.position.z);
+        }
+
         this.shark.transform.LookAt(this.camera.transform);
+        this.camera.transform.LookAt(this.shark.transform);
         this.shark.GetComponent<Rigidbody>().AddForce(this.shark.transform.forward * 2000f);
     }
     

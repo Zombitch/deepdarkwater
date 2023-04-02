@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Controler.unity
     guid: 8cc2f7ecfc6a3b94eaf11fc727a77948
   - enabled: 1
-    path: Assets/Scenes/Custome Scene NOT RIGHT.unity
-    guid: c7c03f2fa9f9aab4da962d725e65171d
+    path: Assets/Scenes/Custome Scene.unity
+    guid: 54b4d9dfb91ab8841827b64b5cb2894b
   - enabled: 1
     path: Assets/Scenes/Victory Screen.unity
     guid: fbbe374786ea1ff489853a0918f4cf4c

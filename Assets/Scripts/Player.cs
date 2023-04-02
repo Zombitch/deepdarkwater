@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public TMP_Text textMeshPro;
     public GameObject shark;
     public Camera camera;
+    public GameObject audioSource;
 
     private float lastLightEvent = 0f;
     private bool isRescued = false;
@@ -78,6 +79,7 @@ public class Player : MonoBehaviour
         if(hitObject.name == "Diver"){
             Destroy(hitObject);
             this.isRescued = true;
+            Destroy(this.audioSource);
             this.textMeshPro.enabled = true;
             logger.Log("Collision", "Diver has been rescued, return to base");
         }

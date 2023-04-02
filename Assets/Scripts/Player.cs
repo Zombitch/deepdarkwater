@@ -61,6 +61,8 @@ public class Player : MonoBehaviour
             Destroy(hitObject);
             this.isRescued = true;
             logger.Log("Collision", "Diver has been rescued, return to base");
+        }else if(this.isRescued == true && hitObject.name == "SeabaseCollider"){
+            logger.Log("Collision", "Welcome back to the Sea base");
         }
     }
 }

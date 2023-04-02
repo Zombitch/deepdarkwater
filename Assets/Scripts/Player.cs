@@ -110,10 +110,10 @@ public class Player : MonoBehaviour
             this.IncreaseLight();
             Destroy(hitObject);
         } else if(hitObject.name == "WhiteShark") {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(4);
         } else if(this.isRescued == true && hitObject.name == "SeabaseCollider"){
             this.textMeshPro.enabled = false;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
             logger.Log("Collision", "Welcome back to the Sea base");
         }
     }

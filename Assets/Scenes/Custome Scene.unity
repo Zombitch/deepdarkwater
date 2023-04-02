@@ -22135,7 +22135,7 @@ PrefabInstance:
       objectReference: {fileID: 381047500}
     - target: {fileID: 1822621775, guid: 8baf509c417cdaa4792d4bec78b5605f, type: 3}
       propertyPath: lightTick
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1822621775, guid: 8baf509c417cdaa4792d4bec78b5605f, type: 3}
       propertyPath: textMeshPro

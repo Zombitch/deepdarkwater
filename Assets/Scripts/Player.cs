@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class Player : MonoBehaviour
     public Light light;
     public bool enableLightSystem = true;
     public float lightTick = 0.15f;
+    public TMP_Text textMeshPro;
 
     private float lastLightEvent = 0f;
     private bool isRescued = false;
@@ -20,6 +23,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         this.lastLightEvent = Time.time;
+
+        if(this.textMeshPro != null) this.textMeshPro.enabled = false;
     }
 
     // Update is called once per frame
@@ -60,7 +65,12 @@ public class Player : MonoBehaviour
         if(hitObject.name == "Diver"){
             Destroy(hitObject);
             this.isRescued = true;
+            this.textMeshPro.enabled = true;
             logger.Log("Collision", "Diver has been rescued, return to base");
+        }else if(this.isRescued == true && hitObject.name == "SeabaseCollider"){
+            this.textMeshPro.enabled = false;
+            SceneManager.LoadScene(2);
+            logger.Log("Collision", "Welcome back to the Sea base");
         }
     }
     

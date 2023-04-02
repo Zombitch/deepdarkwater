@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 1365169064919597462}
   - component: {fileID: 1822621766}
   - component: {fileID: 1822621775}
+  - component: {fileID: 670314122}
   - component: {fileID: 3267932947438778541}
   - component: {fileID: 6457439992701040292}
   m_Layer: 0
@@ -279,6 +280,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 03d86292-48f2-4cea-9600-b911ef23457c
     m_ActionName: PlayerMap/Look[/XInputControllerWindows/rightStick/up,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/rightStick/right]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1365169064919597469}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnStrafeUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f64b0d1e-93c5-4f77-b8dc-f4eedac5327b
+    m_ActionName: PlayerMap/StrafeUp[/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1365169064919597469}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnStrafeDown
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4fedcd7e-7b91-4dfa-83c3-93922a60e6a6
+    m_ActionName: PlayerMap/StrafeDown[/XInputControllerWindows/rightTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerMap
@@ -311,8 +344,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 0.5, z: 2}
-  m_Center: {x: 0, y: -3, z: 0}
+  m_Size: {x: 3, y: 5, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1822621766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,7 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxFishs: 3
   schoolFish: {fileID: 4064230082284091281, guid: 70a316df329b87740a5bc98d75f0c1af, type: 3}
-  posY: 3
+  posY: 0
 --- !u!114 &1822621775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,10 +375,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   light: {fileID: 720690004}
   enableLightSystem: 1
-  lightTick: 0.15
+  lightTick: 0.1
   textMeshPro: {fileID: 0}
   shark: {fileID: 0}
-  camera: {fileID: 0}
+  camera: {fileID: 1365169066149682117}
+--- !u!65 &670314122
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365169064919597470}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 6, z: 4}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &3267932947438778541
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -399,7 +445,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365169066149682118}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

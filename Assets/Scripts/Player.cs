@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     private float lastLightEvent = 0f;
     private bool isRescued = false;
     private bool isSharkAppeared = false;
+    private float minSharkPositionY = -20f;
 
     public bool IsSharkAppeared(){ return this.isSharkAppeared;}
 
@@ -79,16 +80,18 @@ public class Player : MonoBehaviour
             this.isRescued = true;
             this.textMeshPro.enabled = true;
             logger.Log("Collision", "Diver has been rescued, return to base");
-        }else if(this.isRescued == true && hitObject.name == "SeabaseCollider"){
-            this.textMeshPro.enabled = false;
-            SceneManager.LoadScene(2);
-            logger.Log("Collision", "Welcome back to the Sea base");
         }
     }
 
     private void spawnShark(){
-        this.shark.transform.position = this.camera.transform.position + this.camera.transform.forward * 100;
+        this.shark.transform.position = this.camera.transform.position + this.camera.transform.forward * 125;
+
+        if(this.shark.transform.position.y < this.minSharkPositionY){
+            this.shark.transform.position = new Vector3(this.shark.transform.position.x, this.minSharkPositionY, this.shark.transform.position.z);
+        }
+
         this.shark.transform.LookAt(this.camera.transform);
+        this.camera.transform.LookAt(this.shark.transform);
         this.shark.GetComponent<Rigidbody>().AddForce(this.shark.transform.forward * 2000f);
     }
     
@@ -97,13 +100,22 @@ public class Player : MonoBehaviour
         
         if(hitObject.tag == "Fish")
         {
+            StartCoroutine(gameObject.GetComponent<FlashLight>().handleFlashLight());
             this.IncreaseLight();
             gameObject.GetComponent<SpawnFoes>().removeSchoolFishNumber();
             Destroy(hitObject.transform.parent.gameObject);
         } else if (hitObject.tag == "SeaWeed")
         {
+            StartCoroutine(gameObject.GetComponent<FlashLight>().handleFlashLight());
             this.IncreaseLight();
             Destroy(hitObject);
-        }else if(hitObject.name == "WhiteShark") SceneManager.LoadScene(3);
+        } else if(hitObject.name == "WhiteShark") {
+            SceneManager.LoadScene("Game Over Screen");
+        } else if(this.isRescued == true && hitObject.name == "SeabaseCollider"){
+            this.textMeshPro.enabled = false;
+            SceneManager.LoadScene("Victory Screen");
+            logger.Log("Collision", "Welcome back to the Sea base");
+        }
     }
+
 }

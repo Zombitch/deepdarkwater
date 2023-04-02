@@ -12,6 +12,7 @@ public class SpawnFoes : MonoBehaviour
     public GameObject schoolFish;
 
     public float posY = 0f;
+    public float spawnInterval = 5f;
 
     public void addSchoolFishNumber()
     {
@@ -23,15 +24,26 @@ public class SpawnFoes : MonoBehaviour
         m_currentsSchoolFishNumber--;
     }
 
+    void Start()
+    {
+        this.startSpawn();
+        InvokeRepeating("SpawnSphereOnEdgeRandomly3D", spawnInterval, spawnInterval);
+    }
+
     void Update()
     {
-        if (m_currentsSchoolFishNumber <= maxFishs)
+        
+    }
+
+    void startSpawn()
+    {
+        for (int i = 0; i < maxFishs; i++) 
         {
-            SpawnSphereOnEdgeRandomly3D(schoolFish);
+            this.SpawnSphereOnEdgeRandomly3D();
         }
     }
 
-    void SpawnSphereOnEdgeRandomly3D(GameObject schoolFish)
+    void SpawnSphereOnEdgeRandomly3D()
     {
         float radius = 2f;
         Vector3 randomPos = Random.insideUnitSphere * radius;
@@ -48,10 +60,10 @@ public class SpawnFoes : MonoBehaviour
         randomPos.z = Mathf.Sin(dotProductAngle * (Random.value > 0.5f ? 1f : -1f)) * radius + transform.position.z;
         randomPos.y = posY;
             
-        GameObject go = Instantiate(schoolFish, randomPos, Quaternion.identity);
+        GameObject go = Instantiate(this.schoolFish, randomPos, Quaternion.identity);
         go.transform.position = randomPos;
         this.addSchoolFishNumber();
     }
-    
+
 
 }

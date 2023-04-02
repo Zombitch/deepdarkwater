@@ -40,14 +40,25 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate(){
         float higherVelocityValue = Mathf.Max(Mathf.Abs(this.rigidBody.velocity.z), Mathf.Max(Mathf.Abs(this.rigidBody.velocity.x), Mathf.Abs(this.rigidBody.velocity.y)));
+        bool isMultipleDirection = false;
 
         if(!this.player.IsSharkAppeared()){
             if(this.move != Vector3.zero){
-                if(this.move.z != 0) this.direction = this.transform.forward * this.move.z * this.moveSpeed * Time.fixedDeltaTime;
-                else if(this.move.x != 0) this.direction = this.transform.right * this.move.x * this.moveSpeed * Time.fixedDeltaTime;
-                else if(this.move.y != 0) this.direction = this.transform.up * this.move.y * this.moveSpeed * Time.fixedDeltaTime;
+                if(this.move.z != 0){
+                    this.direction = this.transform.forward * this.move.z;
+                    isMultipleDirection = true;
+                }
+                if(this.move.x != 0){
+                    this.direction = this.transform.right * this.move.x;
+                    isMultipleDirection = true;
+                }
+                if(this.move.y != 0){
+                    if(isMultipleDirection) this.direction += this.transform.up * this.move.y;
+                    else this.direction = this.transform.up * this.move.y;
+                    isMultipleDirection = true;
+                }
 
-                this.rigidBody.velocity = this.direction;
+                this.rigidBody.velocity = this.direction * this.moveSpeed * Time.fixedDeltaTime;
             }else if(Time.time - this.lastTimeMovement > 1f){
                 if(higherVelocityValue > 1.5f){
                     this.rigidBody.velocity = this.rigidBody.velocity / this.intertie;
@@ -63,11 +74,11 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext value){
         Vector2 move2D = value.ReadValue<Vector2>();
-        this.move = new Vector3(move2D.x, 0, move2D.y);
+        this.move = new Vector3(move2D.x, this.move.y, move2D.y);
 
         if(this.move == Vector3.zero && !this.player.IsSharkAppeared()){
             this.rigidBody.velocity = Vector3.zero;
-            this.rigidBody.AddForce(this.direction * 20);
+            this.rigidBody.AddForce(this.direction * this.moveSpeed * Time.deltaTime * 20);
             this.lastTimeMovement = Time.time;
         }
     }
@@ -82,8 +93,9 @@ public class PlayerController : MonoBehaviour
     }
 
     public void OnStrafeUp(InputAction.CallbackContext value){
+        logger.Log("Straf", "Strafup");
         if(value.ReadValueAsButton()){
-            this.move = new Vector3(0, 1f, 0);
+            this.move = new Vector3(this.move.x, 1f, this.move.z);
         }else{
             this.move.y = 0f;
         }
@@ -91,7 +103,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnStrafeDown(InputAction.CallbackContext value){
         if(value.ReadValueAsButton()){
-            this.move = new Vector3(0, -1f, 0);
+            this.move = new Vector3(this.move.x, -1f, this.move.z);
         }else{
             this.move.y = 0f;
         }

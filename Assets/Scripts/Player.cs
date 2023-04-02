@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -68,6 +69,7 @@ public class Player : MonoBehaviour
             logger.Log("Collision", "Diver has been rescued, return to base");
         }else if(this.isRescued == true && hitObject.name == "SeabaseCollider"){
             this.textMeshPro.enabled = false;
+            SceneManager.LoadScene(2);
             logger.Log("Collision", "Welcome back to the Sea base");
         }
     }

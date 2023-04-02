@@ -15,9 +15,12 @@ public class Player : MonoBehaviour
     public bool enableLightSystem = true;
     public float lightTick = 0.15f;
     public TMP_Text textMeshPro;
+    public GameObject shark;
+    public Camera camera;
 
     private float lastLightEvent = 0f;
     private bool isRescued = false;
+    private bool isSharkAppeared = false;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +39,13 @@ public class Player : MonoBehaviour
     void FixedUpdate(){
         if(Mathf.Abs(Time.time - this.lastLightEvent) > this.lightTick){
             this.DecreaseLight();
+        }
+
+        if(this.isSharkAppeared == false && this.light.intensity < 0.2f){
+            this.isSharkAppeared = true;
+            this.spawnShark();
+        }else if(this.isSharkAppeared){
+
         }
     }
 
@@ -72,5 +82,11 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene(2);
             logger.Log("Collision", "Welcome back to the Sea base");
         }
+    }
+
+    private void spawnShark(){
+        this.shark.transform.position = this.camera.transform.position + this.camera.transform.forward * 100;
+        this.shark.transform.LookAt(this.camera.transform);
+        this.shark.GetComponent<Rigidbody>().AddForce(this.shark.transform.forward * 2000f);
     }
 }

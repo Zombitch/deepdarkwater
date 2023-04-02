@@ -102,6 +102,6 @@ public class Player : MonoBehaviour
         {
             this.IncreaseLight();
             Destroy(hitObject);
-        }
+        }else if(hitObject.name == "WhiteShark") SceneManager.LoadScene(3);
     }
 }

@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     private bool isRescued = false;
     private bool isSharkAppeared = false;
 
+    public bool IsSharkAppeared(){ return this.isSharkAppeared;}
+
     // Start is called before the first frame update
     void Start()
     {

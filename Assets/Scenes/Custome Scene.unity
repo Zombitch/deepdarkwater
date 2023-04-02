@@ -21477,7 +21477,7 @@ Transform:
   - {fileID: 1569290350}
   - {fileID: 88763790}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2099588612
 GameObject:
@@ -21955,7 +21955,7 @@ PrefabInstance:
       objectReference: {fileID: 1365169064858045627}
     - target: {fileID: 1822621775, guid: 8baf509c417cdaa4792d4bec78b5605f, type: 3}
       propertyPath: lightTick
-      value: 0.8
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1822621775, guid: 8baf509c417cdaa4792d4bec78b5605f, type: 3}
       propertyPath: textMeshPro

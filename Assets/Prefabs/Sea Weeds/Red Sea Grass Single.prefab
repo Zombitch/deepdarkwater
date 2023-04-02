@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 7847627905895894813}
   - component: {fileID: 1074183643487481187}
   - component: {fileID: 5617628976182004231}
+  - component: {fileID: -8968743489458801755}
   m_Layer: 0
   m_Name: Red Sea Grass Single
-  m_TagString: Untagged
+  m_TagString: SeaWeed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4
@@ -84,6 +85,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-8968743489458801755
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6776355147759300453}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 0.5}
+  m_Center: {x: 0, y: 0.42, z: 0}
 --- !u!1001 &2611744052630598385
 PrefabInstance:
   m_ObjectHideFlags: 0

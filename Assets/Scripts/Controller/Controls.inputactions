@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Interaction",
+                    "name": "AddLight",
                     "type": "Button",
                     "id": "d69d1fea-4dc5-4557-a8bd-e58301ae3a71",
                     "expectedControlType": "Button",
@@ -28,6 +28,24 @@
                     "type": "Value",
                     "id": "03d86292-48f2-4cea-9600-b911ef23457c",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "StrafeUp",
+                    "type": "Button",
+                    "id": "f64b0d1e-93c5-4f77-b8dc-f4eedac5327b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "StrafeDown",
+                    "type": "Button",
+                    "id": "4fedcd7e-7b91-4dfa-83c3-93922a60e6a6",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -91,34 +109,12 @@
                 },
                 {
                     "name": "",
-                    "id": "d7bf77af-c0c8-4e4b-906f-a6ecf2406fda",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Interaction",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "46901188-9ab3-46ff-88d0-ffcbc2bc6ce5",
                     "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Interaction",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "643b89b3-02d7-4a58-8664-fc827eea074a",
-                    "path": "<Gamepad>/rightShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Interaction",
+                    "action": "AddLight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -176,6 +172,28 @@
                     "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "faee9a31-7617-4ae6-8c56-883021b2026c",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StrafeUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5327bd68-ba41-42a7-8e7d-f5fd6f5b07b7",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StrafeDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

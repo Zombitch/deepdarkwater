@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 8170455285434144520}
   - component: {fileID: 8170455285435109832}
   - component: {fileID: 8170455285437039373}
+  - component: {fileID: 1360766930331999388}
   m_Layer: 0
   m_Name: Tropical Fish 18_07
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,9 +98,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 009ec6487ac49f24f8abd79beee13831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  averageSpeed: 3
+  averageSpeed: 1
   performance: 5
   flock: {fileID: 0}
+--- !u!136 &1360766930331999388
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8170455285437039374}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.4
+  m_Height: 0.4
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2952682525430453562
 PrefabInstance:
   m_ObjectHideFlags: 0

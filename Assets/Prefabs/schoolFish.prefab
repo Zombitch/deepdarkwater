@@ -51,7 +51,7 @@ MonoBehaviour:
   - {fileID: 7702530009272504684, guid: aa01717864cbfd644b57c43f0bca4d65, type: 3}
   - {fileID: 8170455285437039374, guid: 55ed7607a793e5e43a2afc1328918f94, type: 3}
   fishSchool: {fileID: 4064230082284091281}
-  wanderSize: 7
+  wanderSize: 15
   target: {fileID: 4064230083255349563}
   numFish: 1
   allFish: []

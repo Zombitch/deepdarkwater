@@ -73,4 +73,19 @@ public class Player : MonoBehaviour
             logger.Log("Collision", "Welcome back to the Sea base");
         }
     }
+    
+    void OnTriggerEnter(Collider collider) {
+        GameObject hitObject = collider.gameObject;
+        
+        if(hitObject.tag == "Fish")
+        {
+            this.IncreaseLight();
+            gameObject.GetComponent<SpawnFoes>().removeSchoolFishNumber();
+            Destroy(hitObject.transform.parent.gameObject);
+        } else if (hitObject.tag == "SeaWeed")
+        {
+            this.IncreaseLight();
+            Destroy(hitObject);
+        }
+    }
 }

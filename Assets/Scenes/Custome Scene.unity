@@ -4705,6 +4705,7 @@ Transform:
   m_Children:
   - {fileID: 572298055}
   - {fileID: 840302872}
+  - {fileID: 843116774}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9468,7 +9469,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 384004866}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &843116775
 AudioSource:
@@ -22098,6 +22099,18 @@ PrefabInstance:
     - target: {fileID: 1365169064919597457, guid: 8baf509c417cdaa4792d4bec78b5605f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365169064919597462, guid: 8baf509c417cdaa4792d4bec78b5605f, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365169064919597462, guid: 8baf509c417cdaa4792d4bec78b5605f, type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365169064919597462, guid: 8baf509c417cdaa4792d4bec78b5605f, type: 3}
+      propertyPath: m_Size.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1365169064919597470, guid: 8baf509c417cdaa4792d4bec78b5605f, type: 3}
       propertyPath: m_Name

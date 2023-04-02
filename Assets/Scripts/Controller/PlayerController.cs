@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
             if(this.move != Vector3.zero){
                 if(this.move.z != 0) this.direction = this.transform.forward * this.move.z * this.moveSpeed * Time.fixedDeltaTime;
                 else if(this.move.x != 0) this.direction = this.transform.right * this.move.x * this.moveSpeed * Time.fixedDeltaTime;
+                else if(this.move.y != 0) this.direction = this.transform.up * this.move.y * this.moveSpeed * Time.fixedDeltaTime;
 
                 this.rigidBody.velocity = this.direction;
             }else if(Time.time - this.lastTimeMovement > 1f){
@@ -77,6 +78,22 @@ public class PlayerController : MonoBehaviour
         if(!this.player.IsSharkAppeared()){
             if(this.invertYAxis) this.look = new Vector3(look2D.y, look2D.x, 0);
             else this.look = new Vector3(look2D.y*-1, look2D.x, 0);
+        }
+    }
+
+    public void OnStrafeUp(InputAction.CallbackContext value){
+        if(value.ReadValueAsButton()){
+            this.move = new Vector3(0, 1f, 0);
+        }else{
+            this.move.y = 0f;
+        }
+    }
+
+    public void OnStrafeDown(InputAction.CallbackContext value){
+        if(value.ReadValueAsButton()){
+            this.move = new Vector3(0, -1f, 0);
+        }else{
+            this.move.y = 0f;
         }
     }
 }

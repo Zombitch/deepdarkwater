@@ -53,6 +53,24 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""StrafeUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""f64b0d1e-93c5-4f77-b8dc-f4eedac5327b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""StrafeDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""4fedcd7e-7b91-4dfa-83c3-93922a60e6a6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -176,6 +194,28 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""faee9a31-7617-4ae6-8c56-883021b2026c"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StrafeUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5327bd68-ba41-42a7-8e7d-f5fd6f5b07b7"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StrafeDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -187,6 +227,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_PlayerMap_Movements = m_PlayerMap.FindAction("Movements", throwIfNotFound: true);
         m_PlayerMap_AddLight = m_PlayerMap.FindAction("AddLight", throwIfNotFound: true);
         m_PlayerMap_Look = m_PlayerMap.FindAction("Look", throwIfNotFound: true);
+        m_PlayerMap_StrafeUp = m_PlayerMap.FindAction("StrafeUp", throwIfNotFound: true);
+        m_PlayerMap_StrafeDown = m_PlayerMap.FindAction("StrafeDown", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -251,6 +293,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerMap_Movements;
     private readonly InputAction m_PlayerMap_AddLight;
     private readonly InputAction m_PlayerMap_Look;
+    private readonly InputAction m_PlayerMap_StrafeUp;
+    private readonly InputAction m_PlayerMap_StrafeDown;
     public struct PlayerMapActions
     {
         private @Controls m_Wrapper;
@@ -258,6 +302,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Movements => m_Wrapper.m_PlayerMap_Movements;
         public InputAction @AddLight => m_Wrapper.m_PlayerMap_AddLight;
         public InputAction @Look => m_Wrapper.m_PlayerMap_Look;
+        public InputAction @StrafeUp => m_Wrapper.m_PlayerMap_StrafeUp;
+        public InputAction @StrafeDown => m_Wrapper.m_PlayerMap_StrafeDown;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -276,6 +322,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
+            @StrafeUp.started += instance.OnStrafeUp;
+            @StrafeUp.performed += instance.OnStrafeUp;
+            @StrafeUp.canceled += instance.OnStrafeUp;
+            @StrafeDown.started += instance.OnStrafeDown;
+            @StrafeDown.performed += instance.OnStrafeDown;
+            @StrafeDown.canceled += instance.OnStrafeDown;
         }
 
         private void UnregisterCallbacks(IPlayerMapActions instance)
@@ -289,6 +341,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
+            @StrafeUp.started -= instance.OnStrafeUp;
+            @StrafeUp.performed -= instance.OnStrafeUp;
+            @StrafeUp.canceled -= instance.OnStrafeUp;
+            @StrafeDown.started -= instance.OnStrafeDown;
+            @StrafeDown.performed -= instance.OnStrafeDown;
+            @StrafeDown.canceled -= instance.OnStrafeDown;
         }
 
         public void RemoveCallbacks(IPlayerMapActions instance)
@@ -311,5 +369,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnMovements(InputAction.CallbackContext context);
         void OnAddLight(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
+        void OnStrafeUp(InputAction.CallbackContext context);
+        void OnStrafeDown(InputAction.CallbackContext context);
     }
 }

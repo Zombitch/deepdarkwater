@@ -31,6 +31,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "StrafeUp",
+                    "type": "Button",
+                    "id": "f64b0d1e-93c5-4f77-b8dc-f4eedac5327b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "StrafeDown",
+                    "type": "Button",
+                    "id": "4fedcd7e-7b91-4dfa-83c3-93922a60e6a6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -154,6 +172,28 @@
                     "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "faee9a31-7617-4ae6-8c56-883021b2026c",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StrafeUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5327bd68-ba41-42a7-8e7d-f5fd6f5b07b7",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StrafeDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

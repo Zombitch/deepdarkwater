@@ -15,6 +15,6 @@ public class ButtonMenu : MonoBehaviour
     }
 
     public void RestartGame() {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Custome Scene");
     }
 }

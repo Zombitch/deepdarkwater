@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1345142944477833946}
   - component: {fileID: 2915066160910148882}
   - component: {fileID: 1798554783097144986}
-  - component: {fileID: 6354410935923325183}
   m_Layer: 0
   m_Name: Area Light
   m_TagString: Untagged
@@ -109,17 +108,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1365169064919597470, guid: 8baf509c417cdaa4792d4bec78b5605f, type: 3}
---- !u!136 &6354410935923325183
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 10221181148430125}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.3
-  m_Height: 0.6
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}

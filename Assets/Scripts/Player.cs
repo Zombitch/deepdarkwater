@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.lastLightEvent = Time.time;        
+        this.lastLightEvent = Time.time;
     }
 
     // Update is called once per frame
@@ -61,6 +61,21 @@ public class Player : MonoBehaviour
             Destroy(hitObject);
             this.isRescued = true;
             logger.Log("Collision", "Diver has been rescued, return to base");
+        }
+    }
+    
+    void OnTriggerEnter(Collider collider) {
+        GameObject hitObject = collider.gameObject;
+        
+        if(hitObject.tag == "Fish")
+        {
+            this.IncreaseLight();
+            gameObject.GetComponent<SpawnFoes>().removeSchoolFishNumber();
+            Destroy(hitObject.transform.parent.gameObject);
+        } else if (hitObject.tag == "SeaWeed")
+        {
+            this.IncreaseLight();
+            Destroy(hitObject);
         }
     }
 }

@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
 
     public void IncreaseLight(){
         if(this.enableLightSystem){
-            this.light.intensity = Mathf.Min(1f, this.light.intensity+0.1f);
+            this.light.intensity = Mathf.Min(1f, this.light.intensity+0.2f);
             this.light.range = Mathf.Min(200f, this.light.range+ 10f);
             this.lastLightEvent = Time.time;
         }

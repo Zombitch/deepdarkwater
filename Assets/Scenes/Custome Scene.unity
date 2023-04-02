@@ -21291,6 +21291,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: schoolFish
       objectReference: {fileID: 0}
+    - target: {fileID: 4064230082284091292, guid: 70a316df329b87740a5bc98d75f0c1af, type: 3}
+      propertyPath: numFish
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4064230082284091295, guid: 70a316df329b87740a5bc98d75f0c1af, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -32006,8 +32010,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1822621766, guid: 8baf509c417cdaa4792d4bec78b5605f, type: 3}
+      propertyPath: posY
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1822621766, guid: 8baf509c417cdaa4792d4bec78b5605f, type: 3}
       propertyPath: spawnInterval
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1822621775, guid: 8baf509c417cdaa4792d4bec78b5605f, type: 3}
       propertyPath: shark
